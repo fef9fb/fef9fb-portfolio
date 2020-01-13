@@ -11,18 +11,18 @@
                 </div>
             </div>
         </div>
+        <div id="menu">
+            <nav>
+                <ul>
+                    <li><a href="/">INFO</a></li>
+                    <li><a href="/">WORKS</a></li>
+                    <li><a href="/">JS</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
     <section>
         <div id="wrap">
-            <div id="menu">
-                <nav>
-                    <ul>
-                        <li><a href="/">INFO</a></li>
-                        <li><a href="/works">WORKS</a></li>
-                        <li><a href="/accessory">JS</a></li>
-                    </ul>
-                </nav>
-            </div>
             <div id="content">
                 <router-view/>
             </div>
@@ -94,16 +94,14 @@ h3 {
     padding: 5px;
 }
 header {
-    height:50px;
-    left: 0;
+    padding: 10px 0;
     position: fixed;
     top: 0;
     width: 100%;
 
     .title {
-        margin: 0 auto;
-        padding: 20px 0;
-        width: 65%;
+        float: left;
+        margin-left: 50px;
 
         @include tab {
             width: 80%;
@@ -120,8 +118,8 @@ header {
 
 #wrap {
     margin: 0 auto;
-    padding-top: 50px;
-    width: 65%;
+    padding-top: 100px;
+    width: 70%;
 
     @include tab {
         width: 80%;
@@ -133,12 +131,13 @@ header {
 }
 
 #menu {
-    float: left;
-    margin-top: 20px;
-    position: fixed;
-    width: 200px;
+    float: right;
+    overflow: hidden;
     li {
         padding: 10px 0;
+        text-align: center;
+        float: left;
+        width: 150px;
     }
 
     @include tab {
@@ -233,7 +232,6 @@ header {
 }
 
 #content {
-    padding: 20px 20px 0 250px;
     text-align: center;
 
     @include tab {
@@ -252,7 +250,7 @@ header {
 
 table.info {
     margin: 0 auto;
-    width: 80%;
+    padding-right: 40px;
     td {
         vertical-align: top;
     }
