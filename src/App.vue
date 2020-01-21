@@ -14,9 +14,8 @@
         <div id="menu">
             <nav>
                 <ul>
-                    <li><a href="/">INFO</a></li>
-                    <li><a href="/">WORKS</a></li>
-                    <li><a href="/">JS</a></li>
+                    <li><router-link to="/">INFO</router-link></li>
+                    <li><router-link to="/works">WORKS</router-link></li>
                 </ul>
             </nav>
         </div>

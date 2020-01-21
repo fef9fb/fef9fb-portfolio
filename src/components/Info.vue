@@ -1,5 +1,5 @@
 <template>
-    <div class="hello">
+    <div class="info">
         <h2>Profile</h2>
         <img src="../assets/photo.jpg" class="icon">
 
@@ -25,7 +25,7 @@
 
 <script>
 export default {
-  name: 'HelloWorld',
+  name: 'Info',
   data () {
     return {
       msg: 'Welcome to Your Vue.js App'
