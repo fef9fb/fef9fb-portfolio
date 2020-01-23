@@ -10,12 +10,12 @@
           <tbody>
             <tr>
               <td>URL</td>
-              <td><a href="/">https://portfolio-xxx.herokuapp.com</a></td>
+              <td><a href="/">https://fef9fb-portfolio.web.app/#/</a></td>
             </tr>
             <tr>
               <td>使用した技術</td>
               <td>
-                Laravel / HTML / Sass / jQuery
+                Vue.js / Vue router / HTML / Sass
               </td>
             </tr>
           </tbody>
