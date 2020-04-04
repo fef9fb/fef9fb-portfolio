@@ -18,6 +18,12 @@
                 Windows / MacOS / CentOS / Redhat / Debian
               </td>
             </tr>
+            <tr>
+              <td>Github</td>
+              <td>
+                <a href="https://github.com/fef9fb" target="_blank">@fef9fb</a>
+              </td>
+            </tr>
           </tbody>
         </table>
     </div>
@@ -42,7 +48,7 @@ li {
   display: inline-block;
   margin: 0 10px;
 }
-a {
-  color: #42b983;
-}
+// a {
+//   color: #42b983;
+// }
 </style>
