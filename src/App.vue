@@ -1,5 +1,13 @@
 <template>
   <div id="app">
+    <div id="sp-menu" :class="{ active: isActive }">
+        <nav>
+            <ul>
+                <li><router-link to="/">INFO</router-link></li>
+                <li><router-link to="/works">WORKS</router-link></li>
+            </ul>
+        </nav>
+    </div>
     <header id="top-header">
         <div class="title">
             <h1>Portfolio</h1>
@@ -162,11 +170,21 @@ header {
     }
 
     @include sp {
+        display: none;
+    }
+}
+
+#sp-menu {
+    display: none;
+
+    @include sp {
+        display: block;
         top: -500px;
         background: rgba(0, 0, 0, .5);
         width: 100%;
         text-align: center;
         padding: 10px 0;
+        position: absolute;
         margin-top: 0;
         -webkit-transition: .5s ease-in-out;
         -moz-transition: .5s ease-in-out;
@@ -181,6 +199,7 @@ header {
             li {
                 float: none;
                 position: static;
+                padding: 10px 0;
             }
         }
     }
@@ -239,7 +258,7 @@ header {
     transform: rotate(-315deg);
 }
 
-.open + section > #wrap > #menu {
+#sp-menu.active {
     @include sp  {
         /* #global-nav top + #mobile-head height */
         -moz-transform: translateY(556px);
