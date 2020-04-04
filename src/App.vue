@@ -3,7 +3,7 @@
     <header id="top-header">
         <div class="title">
             <h1>Portfolio</h1>
-            <div id="nav-toggle">
+            <div id="nav-toggle" :class="{ active: isActive }" @click="toggle">
                 <div>
                     <span></span>
                     <span></span>
@@ -32,7 +32,25 @@
 
 <script>
 export default {
-  name: 'App'
+  name: 'App',
+
+  data () {
+    return {
+      isActive: false
+    }
+  },
+
+  methods: {
+    toggle: function () {
+      console.log(this.isActive)
+      if (this.isActive) {
+        this.isActive = false
+      } else {
+        this.isActive = true
+      }
+      console.log(this.isActive)
+    }
+  }
 }
 </script>
 
@@ -204,17 +222,17 @@ header {
     }
 }
 /* #nav-toggle 切り替えアニメーション */
-.open #nav-toggle span:nth-child(1) {
+#nav-toggle.active span:nth-child(1) {
     top: 11px;
     -webkit-transform: rotate(315deg);
     -moz-transform: rotate(315deg);
     transform: rotate(315deg);
 }
-.open #nav-toggle span:nth-child(2) {
+#nav-toggle.active span:nth-child(2) {
     width: 0;
     left: 50%;
 }
-.open #nav-toggle span:nth-child(3) {
+#nav-toggle.active span:nth-child(3) {
     top: 11px;
     -webkit-transform: rotate(-315deg);
     -moz-transform: rotate(-315deg);
