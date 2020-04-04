@@ -1,17 +1,9 @@
 <template>
   <div id="app">
-    <div id="sp-menu" :class="{ active: isActive }">
-        <nav>
-            <ul>
-                <li><router-link to="/">INFO</router-link></li>
-                <li><router-link to="/works">WORKS</router-link></li>
-            </ul>
-        </nav>
-    </div>
     <header id="top-header">
         <div class="title">
             <h1>Portfolio</h1>
-            <div id="nav-toggle" :class="{ active: isActive }" @click="toggle">
+            <div id="nav-toggle">
                 <div>
                     <span></span>
                     <span></span>
@@ -40,25 +32,7 @@
 
 <script>
 export default {
-  name: 'App',
-
-  data () {
-    return {
-      isActive: false
-    }
-  },
-
-  methods: {
-    toggle: function () {
-      console.log(this.isActive)
-      if (this.isActive) {
-        this.isActive = false
-      } else {
-        this.isActive = true
-      }
-      console.log(this.isActive)
-    }
-  }
+  name: 'App'
 }
 </script>
 
@@ -170,21 +144,11 @@ header {
     }
 
     @include sp {
-        display: none;
-    }
-}
-
-#sp-menu {
-    display: none;
-
-    @include sp {
-        display: block;
         top: -500px;
         background: rgba(0, 0, 0, .5);
         width: 100%;
         text-align: center;
         padding: 10px 0;
-        position: absolute;
         margin-top: 0;
         -webkit-transition: .5s ease-in-out;
         -moz-transition: .5s ease-in-out;
@@ -199,7 +163,6 @@ header {
             li {
                 float: none;
                 position: static;
-                padding: 10px 0;
             }
         }
     }
@@ -241,24 +204,24 @@ header {
     }
 }
 /* #nav-toggle 切り替えアニメーション */
-#nav-toggle.active span:nth-child(1) {
+.open #nav-toggle span:nth-child(1) {
     top: 11px;
     -webkit-transform: rotate(315deg);
     -moz-transform: rotate(315deg);
     transform: rotate(315deg);
 }
-#nav-toggle.active span:nth-child(2) {
+.open #nav-toggle span:nth-child(2) {
     width: 0;
     left: 50%;
 }
-#nav-toggle.active span:nth-child(3) {
+.open #nav-toggle span:nth-child(3) {
     top: 11px;
     -webkit-transform: rotate(-315deg);
     -moz-transform: rotate(-315deg);
     transform: rotate(-315deg);
 }
 
-#sp-menu.active {
+.open + section > #wrap > #menu {
     @include sp  {
         /* #global-nav top + #mobile-head height */
         -moz-transform: translateY(556px);

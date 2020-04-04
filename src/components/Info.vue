@@ -25,7 +25,12 @@
 
 <script>
 export default {
-  name: 'Info'
+  name: 'Info',
+  data () {
+    return {
+      msg: 'Welcome to Your Vue.js App'
+    }
+  }
 }
 </script>
 
